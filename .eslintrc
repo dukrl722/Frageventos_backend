@@ -1,0 +1,5 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "ignorePatterns": ["src/**/*.test.ts"],
+  "parser": "babel-eslint"
+}

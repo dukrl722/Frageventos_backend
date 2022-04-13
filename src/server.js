@@ -1,5 +1,6 @@
-const app = require('./app.js');
+const app = require("./app.js").default
+const PORT = 8000
 
-app.listen(3333, () => {
-    console.log('🎁, então é natal krl');
-});
+app.listen(PORT, () => {
+  console.log(`🎁 Servidor rodando na porta ${PORT}`)
+})
