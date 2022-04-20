@@ -18,8 +18,8 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "resolveJsonModule": true,
         "esModuleInterop": true
     }
