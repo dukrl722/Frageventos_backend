@@ -4,6 +4,20 @@ import express, { Request, Response } from 'express'
 
 const UserRouter = express.Router()
 
+/**
+ * Rotas de fato:
+ * 
+ * PUT:    /user/:user_id
+ * DELETE: /user/:user_id
+ * POST:   /user/disable -> Talvez seja mais interessante apenas desabilitar o
+ *                          usuário e não deletar ele de uma vez, assim dá 
+ *                          chance de ele voltar novamente
+ * POST:   /user/login   -> Retorna JWT?
+ * POST:   /user/password_reset/
+ * POST:   /user/password_reset/validate_token/ 
+ * POST:   /user/password_reset/confirm/ 
+ */ 
+
 UserRouter.get("/user", async function (_req: Request, res: Response) {
     const users = await AppDataSource.getRepository(User).find()
     res.json(users)

@@ -5,6 +5,7 @@ import {
     Column,
     Entity,
     PrimaryGeneratedColumn,
+    Unique,
 } from "typeorm"
 import { IsEmail, IsNotEmpty } from "class-validator"
 
@@ -12,6 +13,7 @@ import { IsEmail, IsNotEmpty } from "class-validator"
  * Modelo que vai ser usado para representar os usuários do sistema.
  */
 @Entity()
+@Unique(['email'])
 export default class User {
     @PrimaryGeneratedColumn("uuid")
     id: string
