@@ -1,24 +1,15 @@
+import 'dotenv/config'
 import { DataSource } from "typeorm"
-import User from "./models/user";
-
-/*
-const AppDataSourcePostgres = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "postgres",
-    database: "frageventos_database",
-    entities: ["src/models/*.ts"],
-    logging: true,
-    synchronize: true,
-})
- */
 
 const AppDataSource = new DataSource({
-    type: "sqlite",
-    database: "../database.sqlite",
-    entities: [User],
+    type: process.env.DATABASE_TYPE || "postgres",
+    host: process.env.DATABASE_HOST || "localhost",
+    port: +process.env.DATABASE_PORT || 5432,
+    username: process.env.DATABASE_USERNAME || "postgres",
+    password: process.env.DATABASE_PASSWORD || "postgres",
+    database: process.env.DATABASE_NAME || "frageventos_database",
+    entities: ["src/models/*.ts"],
+    logging: true,
     synchronize: true,
 })
 
