@@ -5,30 +5,22 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
 } from "typeorm"
-import { IsEmail, IsNotEmpty } from "class-validator"
 
-/**
- * Modelo que vai ser usado para representar os usuários do sistema.
- */
 @Entity()
 export default class User {
     @PrimaryGeneratedColumn("uuid")
     id: string
 
     @Column()
-    @IsNotEmpty()
     name: string
 
     @Column()
-    @IsNotEmpty()
     description: string
 
     @Column()
-    @IsNotEmpty()
     place: string
 
     @Column({ name: "starts_on"})
-    @IsNotEmpty()
     startsOn: Date
 
     @Column({ name: "ends_on" })
