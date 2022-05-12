@@ -1,5 +1,14 @@
 {
-  "extends": ["eslint:recommended", "prettier"],
+  "root": true,
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "ignorePatterns": ["src/**/*.test.ts"],
-  "parser": "babel-eslint"
+  "parser": "@typescript-eslint/parser"
 }
